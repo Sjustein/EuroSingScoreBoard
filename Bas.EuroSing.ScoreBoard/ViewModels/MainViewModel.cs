@@ -16,7 +16,8 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             None = 0,
             Vote,
             Settings,
-            ResultsControlPanel
+            ResultsControlPanel,
+            Voters
         }
 
         private Stack<View> navigationStack = new Stack<View>();
@@ -56,11 +57,10 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         private void ShowView(View view, bool pushToStack = true)
         {
             if (pushToStack)
-            {
                 this.navigationStack.Push(view);
-            }
 
             IsSettingsViewVisible = false;
+            IsVotersViewVisible = false;
             IsVoteViewVisible = false;
             IsResultsControlPanelViewVisible = false;
 
@@ -74,6 +74,9 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                     break;
                 case View.ResultsControlPanel:
                     IsResultsControlPanelViewVisible = true;
+                    break;
+                case View.Voters:
+                    IsVotersViewVisible = true;
                     break;
                 case View.None:
                 default:
@@ -103,6 +106,14 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         {
             get { return isSettingsViewVisible; }
             set { Set(ref isSettingsViewVisible, value); }
+        }
+
+        private bool isVotersViewVisible;
+
+        public bool IsVotersViewVisible
+        {
+            get { return isVotersViewVisible; }
+            set { Set(ref isVotersViewVisible, value); }
         }
 
     }
