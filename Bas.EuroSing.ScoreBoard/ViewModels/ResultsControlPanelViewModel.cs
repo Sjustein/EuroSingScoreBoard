@@ -17,6 +17,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
     {
         private IDataService dataService;
         public RelayCommand SettingsCommand { get; set; }
+        public RelayCommand VotersCommand { get; set; }
 
         public ObservableCollection<CountryResultsControlViewModel> Countries { get; set; }
 
@@ -30,6 +31,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         {
             this.dataService = dataService;
             SettingsCommand = new RelayCommand(() => MessengerInstance.Send(new GenericMessage<Message>(Message.ShowSettings)));
+            VotersCommand = new RelayCommand(() => MessengerInstance.Send(new GenericMessage<Message>(Message.ShowVoters)));
 
             Countries = new ObservableCollection<CountryResultsControlViewModel>(from c in this.dataService.GetAllCountries()
                                                                           select new CountryResultsControlViewModel(c, this.dataService));

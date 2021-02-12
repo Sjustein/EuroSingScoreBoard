@@ -48,6 +48,9 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                 case Message.ShowResultsControlPanel:
                     ShowView(View.ResultsControlPanel);
                     break;
+                case Message.ShowVoters:
+                    ShowView(View.Voters);
+                    break;
                 case Message.None:
                 default:
                     break;

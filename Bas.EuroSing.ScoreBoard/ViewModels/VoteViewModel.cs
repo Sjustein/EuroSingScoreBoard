@@ -27,6 +27,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         private List<int> requiredPoints = new List<int>(new int[] { 1, 2, 3, 4, 5, 6, 7 });
 
         public RelayCommand SettingsCommand { get; set; }
+        public RelayCommand VotersCommand { get; set; }
         public RelayCommand ShowResultsCommand { get; set; }
 
         public ObservableCollection<CountryListItemViewModel> Countries { get; set; }
@@ -106,6 +107,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             VotesToCast = new ObservableCollection<int>();
 
             SettingsCommand = new RelayCommand(() => MessengerInstance.Send(new GenericMessage<Message>(Message.ShowSettings)));
+            VotersCommand = new RelayCommand(() => MessengerInstance.Send(new GenericMessage<Message>(Message.ShowVoters)));
             ShowResultsCommand = new RelayCommand(OnShowResultsCommand);
             UpdateCountries();
 

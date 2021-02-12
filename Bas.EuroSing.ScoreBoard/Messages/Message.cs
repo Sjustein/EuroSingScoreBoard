@@ -11,6 +11,7 @@ namespace Bas.EuroSing.ScoreBoard.Messages
         None = 0,
         ShowSettings,
         ShowVoteForm,
-        ShowResultsControlPanel
+        ShowResultsControlPanel,
+        ShowVoters
     }
 }

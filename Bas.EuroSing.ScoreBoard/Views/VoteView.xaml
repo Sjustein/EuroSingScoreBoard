@@ -75,7 +75,7 @@
 
         <Image Grid.ColumnSpan="2" Width="35" Margin="10" Source="/Bas.EuroSing.ScoreBoard;component/Assets/icon.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Grid.ColumnSpan="2" Style="{StaticResource HeaderStyle}" Margin="55,0,0,0">Vote</TextBlock>
-        <Button Grid.Column="4" Command="{Binding VotersCommand}" Style="{DynamicResource SettingsButtonStyle}" />
+        <Button Grid.Column="4" Command="{Binding VotersCommand}" Style="{DynamicResource VotersButtonStyle}" />
         <Button Grid.Column="6" Command="{Binding SettingsCommand}" Style="{DynamicResource SettingsButtonStyle}" />
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="7">
