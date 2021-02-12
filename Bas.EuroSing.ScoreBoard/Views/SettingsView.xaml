@@ -137,7 +137,7 @@
                     <Border Background="#22FFFFFF" BorderBrush="#22FFFFFF" BorderThickness="1" CornerRadius="12">
                         <Grid Margin="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="50" />
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="30" />
                             </Grid.ColumnDefinitions>

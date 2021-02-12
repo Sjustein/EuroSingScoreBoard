@@ -54,5 +54,10 @@ namespace Bas.EuroSing.ScoreBoard.Views
         {
             this.resultsView.Close();
         }
+
+        private void ResultsControlPanelView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

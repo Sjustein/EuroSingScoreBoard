@@ -15,6 +15,6 @@
         
         <views:SettingsView Style="{StaticResource SubWindowStyle}" Visibility="{Binding DataContext.IsSettingsViewVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         <views:VoteView Style="{StaticResource SubWindowStyle}" Visibility="{Binding DataContext.IsVoteViewVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}" />
-        <views:ResultsControlPanelView Style="{StaticResource SubWindowStyle}" Visibility="{Binding DataContext.IsResultsControlPanelViewVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}"  />
+        <views:ResultsControlPanelView Style="{StaticResource SubWindowStyle}" Visibility="{Binding DataContext.IsResultsControlPanelViewVisible, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}" Loaded="ResultsControlPanelView_Loaded"  />
     </Grid>
 </Window>

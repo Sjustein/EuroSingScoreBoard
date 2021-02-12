@@ -75,12 +75,12 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
             <TextBlock Style="{StaticResource LabelStyle}">Country issuing votes</TextBlock>
 
-            <ComboBox ItemsSource="{Binding Countries}" SelectedItem="{Binding CountryIssuingVotes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="40" VerticalAlignment="Top" Style="{DynamicResource CountryComboBoxStyle}">
+            <ComboBox ItemsSource="{Binding Countries}" SelectedItem="{Binding CountryIssuingVotes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="50" VerticalAlignment="Top" Style="{DynamicResource CountryComboBoxStyle}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="50" />
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="30" />
                             </Grid.ColumnDefinitions>
@@ -113,7 +113,7 @@
                     <Border Background="#22FFFFFF" BorderBrush="#22FFFFFF" BorderThickness="1" CornerRadius="12">
                         <Grid Margin="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="50" />
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="50" />
                             </Grid.ColumnDefinitions>
