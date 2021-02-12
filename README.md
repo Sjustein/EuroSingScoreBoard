@@ -1,4 +1,8 @@
 # EuroSingScoreBoard
+
+Working on it!
+In this fork, I will change the system so persons can give points, not countries.
+
 A eurovision-like scoreboard visualizer
 
 Built for a real-life gaming experience based on the Eurovision Song Contest, this scoreboard application lets you collect every nation's votes and display them with striking visuals and animations.
