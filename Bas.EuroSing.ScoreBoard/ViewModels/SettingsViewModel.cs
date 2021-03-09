@@ -37,9 +37,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                 var countryViewModel = this.Countries.SingleOrDefault(c => c.Id == message.CountryId);
 
                 if (countryViewModel != null)
-                {
                     this.Countries.Remove(countryViewModel);
-                }
             });
            
             Countries = new ObservableCollection<CountryListItemViewModel>(from c in dataService.GetAllCountries()
@@ -55,10 +53,8 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
 
         private async void OnDeleteAllVotesCommandAsync()
         {
-            if (MessageBox.Show("Are you sure you want to delete all votes?", "EuroSing 2018", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
-            {
+            if (MessageBox.Show("Are you sure you want to delete all votes?", "Eurovision 2021", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
                 await this.dataService.DeleteAllVotesAsync();
-            }
         }
 
         private async void OnDropCommandAsync(DragEventArgs e)
@@ -91,9 +87,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             }
 
             if (!isInserted)
-            {
                 Countries.Add(newCountry);
-            }
         }
     }
 }

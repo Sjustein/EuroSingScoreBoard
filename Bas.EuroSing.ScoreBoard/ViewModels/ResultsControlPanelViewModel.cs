@@ -47,9 +47,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             Messenger.Default.Register<RevealCountryCompletedMessage>(this, (message) => SetNextState());
 
             if (Countries.Count > 0)
-            {
                 Countries.First().IsSelected = true;
-            }
             SetNextState();
         }
 
@@ -64,13 +62,9 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                 this.state == ResultsState.SplashScreen ||
                 this.state == ResultsState.TwelvePoints ||
                 GetSelectedCountry() != null)
-            {
                 return true;
-            }
             else
-            {
                 return false;
-            }
         }
 
         private void OnNextCommand()
@@ -85,20 +79,14 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             this.state = this.state != ResultsState.TwelvePoints ? this.state + 1 : ResultsState.RevealCountry;
 
             if (this.state == ResultsState.SplashScreen)
-            {
                 Messenger.Default.Send(new ReadyForLateVotesMessage());
-            }
 
             if (this.state == ResultsState.RevealCountry)
             {
                 if (Countries.Count(c => c.IsInQueue) > 0)
-                {
                     this.currentlyRevealedCountry = GetSelectedCountry();
-                }
                 else
-                {
                     this.state = ResultsState.RevealWinner;
-                }
             }
 
             if (this.state == ResultsState.TwelvePoints)
@@ -109,21 +97,15 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                     this.currentlyRevealedCountry.IsInQueue = false;
 
                     if (Countries.Count(c => c.IsInQueue) > 0 )
-                    {
                         if (Countries.Count(c => c.IsInQueue && c.IsSelected) == 0)
-                        {
                             Countries.First(c => c.IsInQueue).IsSelected = true;
-                        }
-                    }
                 }
             }
 
             var selectedCountryId = Countries.FirstOrDefault(c => c.IsSelected)?.Id;
             Model.Country nextCountry = null; 
             if (selectedCountryId.HasValue)
-            {
                 nextCountry = dataService.GetCountry(selectedCountryId.Value);
-            }
             
             Messenger.Default.Send(new ChangeStateMessage(this.state, nextCountry));
             NextCommand.RaiseCanExecuteChanged();

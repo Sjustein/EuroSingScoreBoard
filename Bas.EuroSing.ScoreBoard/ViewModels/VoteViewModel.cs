@@ -63,9 +63,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                 var votes = this.dataService.GetVotes(CountryIssuingVotes.Id);
 
                 foreach (var vote in votes.OrderBy(v => v.ToCountry.Name))
-                {
                     CountriesToVoteOn.Add(new CountryVoteViewModel(vote, this.dataService, VotesToCast));                    
-                }
 
                 PopulateVotesToCast();
             }
@@ -79,18 +77,14 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             {
                 if (int.TryParse(country.NumPoints, out int points) &&  // If country.Numpoints contains a number and
                     validPointValues.Contains(points))              // if the number is one of the valid point values (1-8, 10 and 12)
-                {
                     pointsCast.Add(points);
-                }
             }
 
             VotesToCast.Clear();
             foreach (var value in validPointValues)
             {
                 if (!pointsCast.Contains(value))
-                {
                     VotesToCast.Add(value);
-                }
             }
 
             Messenger.Default.Send(new VotesToCastUpdatedMessage(VotesToCast));
@@ -137,13 +131,9 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         private void OnShowResultsCommand()
         {
             if (AreAllCountriesComplete())
-            {
                 Messenger.Default.Send(new GenericMessage<Message>(Message.ShowResultsControlPanel));
-            }
             else
-            {
-                MessageBox.Show("Not all votes have been cast yet!", "EuroSing 2018", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
+                MessageBox.Show("Not all votes have been cast yet!", "Eurovision 2021", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
         private void UpdateShowResultsButton()
@@ -175,9 +165,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                                select new CountryListItemViewModel(c, this.dataService, this.validPointValues.Count);
 
             foreach (var country in allCountries)
-            {                
                 Countries.Add(country);                
-            }
 
             CountryIssuingVotes = null;
             UpdateShowResultsButton();

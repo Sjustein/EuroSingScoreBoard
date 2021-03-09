@@ -113,9 +113,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             Messenger.Default.Register<GenericMessage<Message>>(this, (message) =>
             {
                 if (message.Content == Message.ShowResultsControlPanel)
-                {
                     votesByIssuingCountry = this.dataService.GetAllVotes();
-                }
             });
 
             Messenger.Default.Register<LateVoteCastMessage>(this, (message) =>
@@ -127,9 +125,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                 var vote = votesFromCountry.FirstOrDefault(v => v.NumPoints == message.NumPoints);
 
                 if (vote != null)
-                {
                     votesFromCountry.Remove(vote);
-                }
 
                 votesFromCountry.Add(new Vote()
                 {
@@ -157,9 +153,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         private void OnEntranceAnimationCompleted()
         {
             for (int i = 1; i < 8; i++)
-            {
                 RevealPoints(i);
-            }
 
             Messenger.Default.Send(new ReorderCountriesMessage());
         }
@@ -177,25 +171,17 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         }
 
         private CountryResultsViewModel GetReceivingCountryForVote(Vote vote)
-        {
-            return vote != null ? Countries.Single(c => c.Id == vote.ToCountryId) : null;
-        }
+            => vote != null ? Countries.Single(c => c.Id == vote.ToCountryId) : null;
 
         private Vote GetVoteForNumPoints(int numPoints)
         {
             int index;
             if (numPoints < 9)
-            {
                 index = numPoints - 1;
-            }
             else if (numPoints == 10)
-            {
                 index = 8;
-            }
             else
-            {
                 index = 9;
-            }
 
             var votes = votesByIssuingCountry[currentCountryId.Value];
             var orderedVotes = votes.OrderBy(v => v.NumPoints);

@@ -48,19 +48,13 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             {
                 bool isFirstTimeNumPointsIsSet = false;
                 if (numPoints == null)
-                {
                     isFirstTimeNumPointsIsSet = true;
-                }
 
                 if (string.IsNullOrWhiteSpace(value) ||
                     (int.TryParse(value, out int pointValue) && (isFirstTimeNumPointsIsSet || availablePoints.Contains(pointValue))))
-                {
                     Set(ref numPoints, value);
-                }
                 else
-                {
                     Set(ref numPoints, string.Empty);
-                }
 
                 if (!isFirstTimeNumPointsIsSet)
                 {
@@ -83,11 +77,8 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
                         };
                     }
                     else
-                    {
                         vote.NumPoints = parsedPoints;
                         this.dataService.SaveVote(vote);
-
-                    }                    
                 }
             }
         }

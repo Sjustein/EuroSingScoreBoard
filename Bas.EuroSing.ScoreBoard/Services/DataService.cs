@@ -50,9 +50,7 @@ namespace Bas.EuroSing.ScoreBoard.Services
         }
 
         public Collection<Country> GetAllCountries()
-        {
-            return new Collection<Country>(db.Countries.ToList());
-        }
+            => new Collection<Country>(db.Countries.ToList());
 
         // Returns a list of votes containing both votes that have been issued by this country 
         // and votes that this country has yet to issue.
@@ -168,8 +166,6 @@ namespace Bas.EuroSing.ScoreBoard.Services
         }
 
         public Collection<Vote> GetIssuedVotes(int countryIssuingVotesId)
-        {
-            return new Collection<Vote>(db.Votes.Where(v => v.FromCountryId == countryIssuingVotesId).ToList());
-        }
+            => new Collection<Vote>(db.Votes.Where(v => v.FromCountryId == countryIssuingVotesId).ToList());
     }
 }

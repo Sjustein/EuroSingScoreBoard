@@ -12,11 +12,7 @@ namespace Bas.EuroSing.ScoreBoard.ValueConverters
     {
         // converts an amount of points to its string representation, with the exception that zero points should be shown as "-" instead of "0".
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            int intValue = (int)value;
-
-            return (intValue == 0) ? "-" : intValue.ToString();
-        }
+            => (((int)value) == 0) ? "-" : ((int)value).ToString();
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

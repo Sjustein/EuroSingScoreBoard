@@ -104,6 +104,10 @@
     <Compile Include="Model\Migrations\202103091917395_VotersAddition.Designer.cs">
       <DependentUpon>202103091917395_VotersAddition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Migrations\202103091922474_Voters image removed.cs" />
+    <Compile Include="Model\Migrations\202103091922474_Voters image removed.Designer.cs">
+      <DependentUpon>202103091922474_Voters image removed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Voter.cs" />
     <Compile Include="Model\Migrations\201801101026116_CreateInitialSchema.cs" />
     <Compile Include="Model\Migrations\201801101026116_CreateInitialSchema.Designer.cs">
@@ -206,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\Migrations\202103091917395_VotersAddition.resx">
       <DependentUpon>202103091917395_VotersAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Migrations\202103091922474_Voters image removed.resx">
+      <DependentUpon>202103091922474_Voters image removed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

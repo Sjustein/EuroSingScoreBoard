@@ -33,8 +33,7 @@ namespace Bas.EuroSing.ScoreBoard.Services
         }
 
         public Collection<Country> GetAllCountries()
-        {
-            return new Collection<Country>(new[] 
+            => new Collection<Country>(new[] 
             {
                 new Country() { Id=1, Name = "Nederland" },
                 new Country() { Id=2, Name = "Cyprus" },
@@ -42,11 +41,9 @@ namespace Bas.EuroSing.ScoreBoard.Services
                 new Country() { Id=4, Name = "Italy" },
                 new Country() { Id=5, Name = "Wyoming" }
             });
-        }
 
         public Collection<Vote> GetVotes(int countryIssuingVotesId)
-        {
-            return new Collection<Vote>(new[]
+            => new Collection<Vote>(new[]
             {
                 new Vote()
                 {
@@ -70,7 +67,6 @@ namespace Bas.EuroSing.ScoreBoard.Services
                     ToCountry = new Country()  { Id=1, Name = "Wyoming" },
                 },
             });
-        }
 
         public void SaveVote(Vote vote, bool force = false)
         {
@@ -93,14 +89,12 @@ namespace Bas.EuroSing.ScoreBoard.Services
         }
 
         public Collection<Country> GetCountriesToGiveVotesTo(int id, int numPoints)
-        {
-            return new Collection<Country>(new[]
+            => new Collection<Country>(new[]
             {
                 new Country() { Id = 1, Name = "Nederland" },
                 new Country() { Id = 2, Name = "Cyprus" },
                 new Country() { Id = 3, Name = "Hungary" }
             });
-        }
 
         public Collection<Vote> GetIssuedVotes(int countryIssuingVotesId)
         {

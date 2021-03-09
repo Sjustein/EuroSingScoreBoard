@@ -26,8 +26,6 @@ namespace Bas.EuroSing.ScoreBoard.Model
         public virtual Country ToCountry { get; set; }
 
         public override string ToString()
-        {
-            return $"{{Vote}} ({NumPoints} points from {FromCountry.Name} to {ToCountry.Name}}}";
-        } 
+            => $"{{Vote}} ({NumPoints} points from {FromCountry.Name} to {ToCountry.Name}}}";
     }
 }
