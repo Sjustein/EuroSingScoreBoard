@@ -28,6 +28,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
             SimpleIoc.Default.Register<ResultsControlPanelViewModel>();
             SimpleIoc.Default.Register<ResultsViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<VotersViewModel>();
             SimpleIoc.Default.Register<VoteViewModel>();            
         }
 
@@ -35,6 +36,7 @@ namespace Bas.EuroSing.ScoreBoard.ViewModels
         public ResultsControlPanelViewModel ResultsControlPanel { get { return ServiceLocator.Current.GetInstance<ResultsControlPanelViewModel>(); } }
         public ResultsViewModel Results { get { return ServiceLocator.Current.GetInstance<ResultsViewModel>(); } }
         public SettingsViewModel Settings { get { return ServiceLocator.Current.GetInstance<SettingsViewModel>(); } }
+        public VotersViewModel Voters { get { return ServiceLocator.Current.GetInstance<VotersViewModel>(); } }
         public VoteViewModel Vote { get { return ServiceLocator.Current.GetInstance<VoteViewModel>(); } }
     }
 }

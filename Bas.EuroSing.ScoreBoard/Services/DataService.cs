@@ -33,6 +33,11 @@ namespace Bas.EuroSing.ScoreBoard.Services
             await db.SaveChangesAsync();
         }
 
+        public Task DeleteAllVotersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task DeleteCountryAsync(int id)
         {
             var country = await db.Countries.FindAsync(id);

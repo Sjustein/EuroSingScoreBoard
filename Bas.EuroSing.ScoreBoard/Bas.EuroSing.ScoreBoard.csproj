@@ -100,6 +100,11 @@
     <Compile Include="Messages\UpdateCountriesToGivePointsToMessage.cs" />
     <Compile Include="Messages\VoteCastMessage.cs" />
     <Compile Include="Messages\VotesToCastUpdatedMessage.cs" />
+    <Compile Include="Model\Migrations\202103091917395_VotersAddition.cs" />
+    <Compile Include="Model\Migrations\202103091917395_VotersAddition.Designer.cs">
+      <DependentUpon>202103091917395_VotersAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Voter.cs" />
     <Compile Include="Model\Migrations\201801101026116_CreateInitialSchema.cs" />
     <Compile Include="Model\Migrations\201801101026116_CreateInitialSchema.Designer.cs">
       <DependentUpon>201801101026116_CreateInitialSchema.cs</DependentUpon>
@@ -113,6 +118,7 @@
     <Compile Include="ViewModels\CountryVoteViewModel.cs" />
     <Compile Include="Messages\ResultsState.cs" />
     <Compile Include="Messages\ReadyForLateVotesMessage.cs" />
+    <Compile Include="ViewModels\VotersViewModel.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -197,6 +203,9 @@
     </Compile>
     <EmbeddedResource Include="Model\Migrations\201801101026116_CreateInitialSchema.resx">
       <DependentUpon>201801101026116_CreateInitialSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Migrations\202103091917395_VotersAddition.resx">
+      <DependentUpon>202103091917395_VotersAddition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -106,5 +106,10 @@ namespace Bas.EuroSing.ScoreBoard.Services
         {
             throw new NotImplementedException();
         }
+
+        public Task DeleteAllVotersAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

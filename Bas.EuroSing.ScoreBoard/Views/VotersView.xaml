@@ -105,7 +105,7 @@
     </UserControl.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Drop">
-            <mvvmlight:EventToCommand PassEventArgsToCommand="True" Command="{Binding DropCommand}" />
+            <mvvmlight:EventToCommand PassEventArgsToCommand="True" Command="{Binding VotersDropCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
@@ -165,7 +165,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Row="2" Width="170" HorizontalAlignment="Left" Style="{StaticResource DeleteAllVotesButtonStyle}" Command="{Binding DeleteAllVotesCommand}">
+        <Button Grid.Row="2" Width="170" HorizontalAlignment="Left" Style="{StaticResource DeleteAllVotesButtonStyle}" Command="{Binding DeleteAllVotersCommand}">
             Delete all voters
         </Button>
         <TextBlock Grid.Row="2" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom">Drop image files on this window to add voters.</TextBlock>
