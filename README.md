@@ -3,6 +3,8 @@
 Working on it!
 In this fork, I will change the system so persons can give points, not countries.
 
+Update: I eventually gave up, since the forked project didn't seem as finished as I was hoping.
+
 A eurovision-like scoreboard visualizer
 
 Built for a real-life gaming experience based on the Eurovision Song Contest, this scoreboard application lets you collect every nation's votes and display them with striking visuals and animations.
